@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3温度计</title>
+    <link href="css/goal-thermometer.css" rel="stylesheet" type="text/css" />
+    <style>
+        .pos0 { top: 12px; width:50px }
+        .pos1 { top: 52px; width:50px }
+        .pos2 { top: 92px; width:50px }
+        .pos3 { top: 132px; width:50px }
+        #therm-body-mercury{
+            height: 0px;
+            animation:myHeight 5s;
+            -webkit-animation:myHeight 5s; /* Safari and Chrome */
+            animation-fill-mode:forwards;
+            -webkit-animation-fill-mode:forwards;
+        }
+        #therm-tooltip{
+            top:160px;
+            animation:myTop 5s;
+            -webkit-animation:myTop 5s; /* Safari and Chrome */
+            animation-fill-mode:forwards;
+            -webkit-animation-fill-mode:forwards;
+        }
+        @keyframes myHeight
+        {
+            from {
+                height:0px;
+                top:173px;
+            }
+            to {
+                height:28px;
+                top:146px;
+            }
+        }
+
+        @-webkit-keyframes myHeight 
+        {
+            from {       /* Safari and Chrome */
+                height:0px;
+                top:173px;
+            }
+            to {
+                height:28px;
+                top:146px;
+            }
+        }
+         @keyframes myTop
+        {
+            from {
+                top:160px;
+            }
+            to {
+                top:131px;
+            }
+        }
+
+        @-webkit-keyframes myTop 
+        {/* Safari and Chrome */
+            from {
+                top:170px;
+            }
+            to {
+                top:131px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="therm-numbers">
+        <div class="therm-number pos0">-100℃</div>
+        <div class="therm-number pos1">-75℃</div>
+        <div class="therm-number pos2">-50℃</div>
+        <div class="therm-number pos3">-25℃</div>
+    </div>
+    <div id="therm-graphics" style="left: 50px;">
+        <img id="therm-top" src="images/glassTop2x.png">
+        <img id="therm-body-bg" src="images/glassBody2x.png" style="height: 160px;">
+        <img id="therm-body-mercury" src="images/coldVertical2x.png" style="top: 146px; height: 28px;">
+        <div id="therm-body-fore" style="height: 160px; background-image: url(&quot;images/tickShine.png&quot;);"></div>
+        <img id="therm-bottom" src="images/coldBottom2x.png" style="top: 173px;">
+        <div id="therm-tooltip">
+            <img class="tip-left" src="images/tooltipPoint2x.png">
+            <div class="tip-middle" style="background-image: url(&quot;images/tooltipMiddle.png&quot;);">
+                <p>-17℃</p>
+            </div>
+            <img class="tip-right" src="images/tooltipButt2x.png">
+        </div>
+    </div>
+</body>
+</html>
